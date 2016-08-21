@@ -1,12 +1,8 @@
 
 
-  
 
 
 
-
-
-  
 
 
 <!doctype html>
@@ -20,9 +16,9 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前去面试，面试官要求当场实现轮播，原生js或者jquery都行。只是实现轮播，看到效果就行，先不考虑效果是否好看。jquery里面可能用函数一行代码就可以实现的，我当时却决定用原生js，硬是花了几十分钟，咩写出来，实力尴尬。。。。   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回家后，自己反思当时的思路 咋就不对...">
   
-  <title>归档: 2016 [ Allida's Memory ]</title>
+  <title>原生JS实现图片轮播--setInterval函数的使用 [ Allida's Memory ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -41,6 +37,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2016/07/03/母亲/index/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        母亲
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -66,7 +71,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">文章</a>
             
@@ -105,184 +110,147 @@
     <div id="content-inner">
       
       
-  <article>
-    
-
-  <div id="recent-posts">
-    <h1>归档
-    
-      <span class="posts-count">
-      共
-      3
+  <article id="post">
+    <h1>原生JS实现图片轮播--setInterval函数的使用</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2016-08-21</span>
       
-        文章
+        <span id = "post-title-updated">修改于 2016-08-21</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/javascript/">javascript</a>
       
       </span>
-    
-    </h1>
-    
-    
+      
+      
+      <span id = "post-title-tags">
+      标签
       
       
         
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-    
-    
-      
+        
+        <a href="/tags/javascript/">javascript</a>
       
         
-        <h3 class="archive-year-title">2016
+          /
         
-          <span class="posts-count">
-          共
-          3
-          
-            文章
-          
-          </span>
         
-        </h3>
+        <a href="/tags/轮播/">轮播</a>
       
-      <div class="post-title-item">
-  
-  <a href="/2016/08/21/原生JS实现图片轮播-setInterval函数的使用/">
-  
-    原生JS实现图片轮播--setInterval函数的使用
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-21</span>
-    
-    <span id = "post-title-categories">分类
-    
-    
+        
+          /
+        
+        
+        <a href="/tags/定时器/">定时器</a>
       
+      </span>
       
-      <a href="/categories/javascript/">javascript</a>
+    </p>
     
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/javascript/">javascript</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/轮播/">轮播</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/定时器/">定时器</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2016/07/03/母亲/index/">
-  
-    母亲
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-3</span>
-    
-    <span id = "post-title-categories">分类
-    
-    
-      
-      
-      <a href="/categories/随笔/">随笔</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/歌词/">歌词</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/抒情/">抒情</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/母亲/">母亲</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2016/07/02/hello-world/">
-  
-    Hello World
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-2</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
+    <p>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前去面试，面试官要求当场实现轮播，原生js或者jquery都行。只是实现轮播，看到效果就行，先不考虑效果是否好看。jquery里面可能用函数一行代码就可以实现的，我当时却决定用原生js，硬是花了几十分钟，咩写出来，实力尴尬。。。。<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回家后，自己反思当时的思路 咋就不对呢 不应该啊，后来发现一个弱智的问题，解决了，给大家上代码：</p>
+<blockquote>
+<p>   lunbo.html页面：</p>
+</blockquote>
+<pre><code>`&lt;!doctype&gt;
+&lt;html&gt;
+&lt;head&gt;
+     &lt;meta  charset=&quot;utf-8&quot;/&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;css/lunbo.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div   id=&quot;container&quot;&gt;
+            &lt;ul&gt;
+                &lt;!-- 设置初始图片的显示 --&gt;
+                &lt;li class=&quot;active&quot;&gt;     
+                    &lt;img src=&quot;image/content_1.jpg&quot; alt=&quot;&quot; /&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;img src=&quot;image/content_2.jpg&quot; alt=&quot;&quot; /&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;img src=&quot;image/content_3.jpg&quot; alt=&quot;&quot; /&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;img src=&quot;image/content_4.jpg&quot; alt=&quot;&quot; /&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+     &lt;/div&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function(){
+        var index=0;   //初始值
+        setInterval(lunbo,1000);    //定时器函数
+        function lunbo(){
+            //找到所有的图片的li 并存放在数组中
+            var arrlist=document.getElementsByTagName(&apos;li&apos;);   
+            arrlist[index].className=&quot;&quot;; //
+            //判断index值的大小 
+            if(index &lt; arrlist.length-1){
+                index++;
+            }else{
+                index=0;
+            }
+            //index值改变后，设置当前index所属的li的className为active
+            arrlist[index].className=&quot;active&quot;;    
+        }
 
+    }
+
+&lt;/script&gt;
+&lt;/html&gt;`
+</code></pre><p>lunbo.css:</p>
+<pre><code>`body, ul  ,li,   div  {
+   margin:0;
+   padding:0;
+  }
+div{
+     border:1px solid #ddd;
+     width:733px;
+     height:431px;
+     margin-left:50px;
+}    
+ul{
+    list-style:none;
+}
+ul li {
+    display:none;
+}
+/*设置className为active的图片的display属性*/
+ul li.active{
+    display:block;
+ }
+</code></pre><p>`<br>  亲们在复制的时候，注意引用的css的地址，图片地址。不足之处，请大家联系本人进行修改，相互学习，共同进步。</p>
 
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2016/07/03/母亲/index/" class="next">下一篇 母亲 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
