@@ -16,7 +16,8 @@
   
   
   
-    <meta name="description" content="&nbsp;&nbsp;&nbsp;用hexo 和github pages搭建的博客，本地预览都是ok的，deploy后 各种访问方式都是报400错误&nbsp;&nbsp;&nbsp;刚才解决了这个问题，进入github，找到你的博客文件所在的仓库，点击进去，找到setting 按钮，页面往下拉，看到custom domain,在文本框中填写的域名,比如我的是 www.icidstar.c...">
+    <meta name="description" content="&nbsp;&nbsp;&nbsp;用hexo 和github pages搭建的博客，本地预览都是ok的，deploy后 各种访问方式都是报400错误
+&nbsp;&nbsp;&nbsp;刚才解决了这个问题，进入github，找到你的博客文件所在的仓库，点击进去，找到setting 按钮，页面往下拉，看到custom domain,在文本框中填写的域名,比如我的是 www.icidstar....">
   
   <title>用hexo和github pages搭建的博客 本地预览ok，上传至github时提示400原因 [ Allida's Memory ]</title>
   
@@ -140,15 +141,18 @@
       
     </p>
     
-    <p>&nbsp;&nbsp;&nbsp;用hexo 和github pages搭建的博客，本地预览都是ok的，deploy后 各种访问方式都是报400错误<br>&nbsp;&nbsp;&nbsp;刚才解决了这个问题，进入github，找到你的博客文件所在的仓库，点击进去，找到setting 按钮，页面往下拉，看到custom domain,在文本框中填写的域名,比如我的是 www.icidstar.com 然后点击save，搞定，现在在浏览器输入域名访问是ok的，输入<a href="http://allida881.github.io" target="_blank" rel="external">http://allida881.github.io</a> 也可以的。</p>
-
+    <p>&nbsp;&nbsp;&nbsp;用hexo 和github pages搭建的博客，本地预览都是ok的，deploy后 各种访问方式都是报400错误</p>
+<p>&nbsp;&nbsp;&nbsp;刚才解决了这个问题，进入github，找到你的博客文件所在的仓库，点击进去，找到setting 按钮，页面往下拉，看到custom domain,在文本框中填写的域名,比如我的是 www.icidstar.com 然后点击save，搞定，现在在浏览器输入域名访问是ok的，输入<a href="http://allida881.github.io" target="_blank" rel="external">http://allida881.github.io</a> 也可以的。</p>
+<h4 id="一劳永逸的方法"><a href="#一劳永逸的方法" class="headerlink" title="一劳永逸的方法"></a>一劳永逸的方法</h4><p>&nbsp;&nbsp;&nbsp;上面的方法在调试时是ok，但你每部署一次，都需要重新设置custom domain，这样会比较麻烦。所以推荐的是以下方法：</p>
+<p>&nbsp;&nbsp;&nbsp;在source文件夹下创建CNAME文件，设置你的域名,例如我的为www.icidstar.com，关闭保存。</p>
+<h4 id="注意：部署CNAME文件时不能添加任何-txt-md的后缀，可以先创建为-txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！"><a href="#注意：部署CNAME文件时不能添加任何-txt-md的后缀，可以先创建为-txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！" class="headerlink" title="注意：部署CNAME文件时不能添加任何.txt .md的后缀，可以先创建为.txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！"></a>注意：部署CNAME文件时不能添加任何.txt .md的后缀，可以先创建为.txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！</h4>
   </article>
   <div class="random-toc-area">
   <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
     <h2>目录</h2>
-    
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一劳永逸的方法"><span class="toc-text">一劳永逸的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意：部署CNAME文件时不能添加任何-txt-md的后缀，可以先创建为-txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！"><span class="toc-text">注意：部署CNAME文件时不能添加任何.txt .md的后缀，可以先创建为.txt文件或其它文件类型，把内容写进去。域名内容设置好以后，开始部署之前一定要将文件的后缀删除掉。不然你在浏览器输入域名，是无法解析的喔。切记！切记！切记！</span></a></li></ol>
   </div>
 </div>
 
