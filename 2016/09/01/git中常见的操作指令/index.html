@@ -1,0 +1,389 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="allida">
+  
+  
+  
+  
+    <meta name="description" content="&nbsp;&nbsp;&nbsp;用连续3天的时间，认真看了廖雪峰的git教程，并把工作中常见的操作指令整理出来，一来是对这两天学习的一个总结，二是方便自己日后查看。
+&nbsp;&nbsp;&nbsp;以下指令的操作建立在本地已经安装好node.js 和git。 没有安装好环境的同学，请自行百度安装。">
+  
+  <title>git中常见的操作指令 [ Allida's Memory ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2016/08/21/原生JS实现图片轮播-setInterval函数的使用/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        原生JS实现图片轮播--setInterval函数的使用
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://img.qqu.cc/uploads/allimg/151204/1-1512041AG4.jpg"/>
+          <div id="homelink">Allida's Memory</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">首页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">文章</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>git中常见的操作指令</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2016-09-01</span>
+      
+        <span id = "post-title-updated">修改于 2016-09-02</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/git/">git</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/git/">git</a>
+      
+      </span>
+      
+    </p>
+    
+    <p>&nbsp;&nbsp;&nbsp;用连续3天的时间，认真看了廖雪峰的git教程，并把工作中常见的操作指令整理出来，一来是对这两天学习的一个总结，二是方便自己日后查看。</p>
+<p>&nbsp;&nbsp;&nbsp;以下指令的操作建立在本地已经安装好node.js 和git。 没有安装好环境的同学，请自行百度安装。<br><a id="more"></a></p>
+<h2 id="创建相关"><a href="#创建相关" class="headerlink" title="创建相关"></a>创建相关</h2><p>选定文件夹，远程克隆一个项目到本地，allida881是你github的账号，flowers_JQM是你github上一个仓库的名字<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/allida881/flowers_JQM.git</span></div></pre></td></tr></table></figure></p>
+<p>clone成功后，接着使用指令：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
+<p>把这个目录变成git可以管理的仓库。不然之后的操作都会报错。</p>
+<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><h5 id="查看当前仓库的状态"><a href="#查看当前仓库的状态" class="headerlink" title="查看当前仓库的状态"></a>查看当前仓库的状态</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git status</div></pre></td></tr></table></figure>
+<h5 id="查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）"><a href="#查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）" class="headerlink" title="查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）"></a>查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure>
+<h5 id="添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）"><a href="#添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）" class="headerlink" title="添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）"></a>添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add .</div></pre></td></tr></table></figure>
+<p>注意：空格后面还有个 . ,意思是将目录下所有内容都添加至暂存区。<br>如果只修改了某个文件，且只想添加此文件到暂存区，使用命令：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add &lt;file name&gt;</div></pre></td></tr></table></figure></p>
+<p>file name为你想要想添加的文件名字。</p>
+<h5 id="提交更改，实际上就是将暂存区的文件提交至当前分支"><a href="#提交更改，实际上就是将暂存区的文件提交至当前分支" class="headerlink" title="提交更改，实际上就是将暂存区的文件提交至当前分支"></a>提交更改，实际上就是将暂存区的文件提交至当前分支</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m  <span class="string">"description "</span></div></pre></td></tr></table></figure>
+<p>-m 后面是本次提交的说明，可以输入任意内容。当然最好是有意义的，这样你就可以从历史记录里方便地找到改动记录。</p>
+<p>为什么需要 add commit 两步呢？跟git的原理有关，git中有暂存区的概念。你可以add多个文件到暂存区，提交时会一次性将暂存区所有的内容都提交完。</p>
+<h5 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h5><p>1&gt;查看当前项目的每次修改记录，包括修改时间，修改的文件或内容<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure></p>
+<p>2&gt;如果觉得看的眼花缭乱，可以添加参数–pretty=oneline,它会把修改记录按行显示出来<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> --pretty=oneline</div></pre></td></tr></table></figure></p>
+<p>友情提示：你会看到一长串“bb32347237423c”类似这样的数字，实际上是git的commit id(版本号)。Git的commit id不是1，2，3……递增的数字，而是一个SHA1计算出来的一个非常大的数字，用十六进制表示</p>
+<h2 id="分支和标签管理"><a href="#分支和标签管理" class="headerlink" title="分支和标签管理"></a>分支和标签管理</h2><h5 id="查看已经存在的所有分支"><a href="#查看已经存在的所有分支" class="headerlink" title="查看已经存在的所有分支"></a>查看已经存在的所有分支</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
+<h5 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch  &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<h5 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checout &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<h5 id="创建分支并切换分支简写"><a href="#创建分支并切换分支简写" class="headerlink" title="创建分支并切换分支简写"></a>创建分支并切换分支简写</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checout -b &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<h5 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<h5 id="查看所有标签"><a href="#查看所有标签" class="headerlink" title="查看所有标签"></a>查看所有标签</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git show  &lt;tag name&gt;</div></pre></td></tr></table></figure>
+<h5 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag &lt;tag name&gt;</div></pre></td></tr></table></figure>
+<h5 id="创建带说明的标签"><a href="#创建带说明的标签" class="headerlink" title="创建带说明的标签"></a>创建带说明的标签</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a &lt;tag name&gt;  -m &lt;tag description&gt;</div></pre></td></tr></table></figure>
+<h5 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -d &lt;tag name&gt;</div></pre></td></tr></table></figure>
+<h2 id="修改和推送到远程"><a href="#修改和推送到远程" class="headerlink" title="修改和推送到远程"></a>修改和推送到远程</h2><h5 id="查看远程库信息"><a href="#查看远程库信息" class="headerlink" title="查看远程库信息"></a>查看远程库信息</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote</div></pre></td></tr></table></figure>
+<p>或者加参数 -v显示更详细的信息<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v</div></pre></td></tr></table></figure></p>
+<p>上面显示了可以抓取和推送的origin的地址。如果没有推送权限，就看不到push的地址。</p>
+<h5 id="关联一个远程库"><a href="#关联一个远程库" class="headerlink" title="关联一个远程库"></a>关联一个远程库</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin https:<span class="comment">//github.com/allida881/flowers_JQM.git</span></div></pre></td></tr></table></figure>
+<h6 id="抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）"><a href="#抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）" class="headerlink" title="抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）"></a>抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<h5 id="推送到远程库"><a href="#推送到远程库" class="headerlink" title="推送到远程库"></a>推送到远程库</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<p>要推送到哪个分支上，后面写上自己的远程库名字</p>
+<h5 id="用于合并某分支到当前分支"><a href="#用于合并某分支到当前分支" class="headerlink" title="用于合并某分支到当前分支"></a>用于合并某分支到当前分支</h5><p>先切换到当前分支（参见上面切换分支的命令），接着使用命令<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge &lt;branch name&gt;</div></pre></td></tr></table></figure></p>
+<p>branch name为要合并的分支的名字</p>
+<h6 id="git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。"><a href="#git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。" class="headerlink" title="git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。"></a>git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。</h6><p>附：廖雪峰git学习教程：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建相关"><span class="toc-text">创建相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地操作"><span class="toc-text">本地操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前仓库的状态"><span class="toc-text">查看当前仓库的状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）"><span class="toc-text">查看最近两次的修改内容，修改前和修改后的都会显示出来（如果你已经不记得上次修改了什么内容）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）"><span class="toc-text">添加文件到暂存区（git的原理中有暂存区、工作区的概念，不理解的亲们可自己补下课）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#提交更改，实际上就是将暂存区的文件提交至当前分支"><span class="toc-text">提交更改，实际上就是将暂存区的文件提交至当前分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看提交历史"><span class="toc-text">查看提交历史</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支和标签管理"><span class="toc-text">分支和标签管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看已经存在的所有分支"><span class="toc-text">查看已经存在的所有分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建分支"><span class="toc-text">创建分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#切换分支"><span class="toc-text">切换分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建分支并切换分支简写"><span class="toc-text">创建分支并切换分支简写</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除分支"><span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有标签"><span class="toc-text">查看所有标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建标签"><span class="toc-text">创建标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建带说明的标签"><span class="toc-text">创建带说明的标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除标签"><span class="toc-text">删除标签</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改和推送到远程"><span class="toc-text">修改和推送到远程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看远程库信息"><span class="toc-text">查看远程库信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关联一个远程库"><span class="toc-text">关联一个远程库</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）"><span class="toc-text">抓取最新的提交从远程库上面，然后本地合并后再推送的（多人协作时使用）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送到远程库"><span class="toc-text">推送到远程库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#用于合并某分支到当前分支"><span class="toc-text">用于合并某分支到当前分支</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。"><span class="toc-text">git的命令还有很多，这只是工作中可能用到的某一部分，其它的之后遇到再更新。有错误的或者有疑问的地方，欢迎共同交流，共同学习，共同成长。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2016/08/21/原生JS实现图片轮播-setInterval函数的使用/" class="next">下一篇 原生JS实现图片轮播--setInterval函数的使用 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by allida using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://img.qqu.cc/uploads/allimg/151204/1-1512041AG4.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/allida881">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/allida/home?wvr=5">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://www.zhihu.com/#signin">
+        
+          <i class="icon iconfont zhihu">&#xe60b;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://www.douban.com/">
+        
+          <i class="icon iconfont douban">&#xe609;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+  <script type="text/javascript">
+if(isTriggerAnalytics) {
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?true";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+}
+</script>
+
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
