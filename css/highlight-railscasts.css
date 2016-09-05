@@ -7,28 +7,35 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  background: #232323;
-  color: #e6e1dc;
+  padding: 0.2em;
+  background: #002240;
+  color: #DEDC00;
 }
 
-.hljs-comment,
+.line .hljs-comment{
+  color:#FF9D00;
+  font-style: normal;
+}
 .hljs-quote {
-  color: #bc9458;
-  font-style: italic;
+  color: #FFDD00;
+  font-style: normal;
 }
 
-.hljs-keyword,
+.hljs-keyword{
+  color:#FFA32D;
+}
 .hljs-selector-tag {
-  color: #c26230;
+  color: #FFDD00;
+}
+.hljs-number{
+  color:#ddd;
 }
 
 .hljs-string,
-.hljs-number,
 .hljs-regexp,
 .hljs-variable,
 .hljs-template-variable {
-  color: #a5c261;
+  color: #31D800;
 }
 
 .hljs-subst {
@@ -59,38 +66,40 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 }
 
 .hljs-attribute {
-  color: #cda869;
+  color: #5AFFBA;
 }
 
 .hljs-meta {
   color: #9b859d;
 }
 
-.hljs-title,
-.hljs-section {
+.hljs-title{
   color: #ffc66d;
+}
+.hljs-section {
+  color: #FF6A87;
 }
 
 .hljs-addition {
-  background-color: #144212;
-  color: #e6e1dc;
+  background-color: #002240;
+  color: #6390B2;
   display: inline-block;
   width: 100%;
 }
 
 .hljs-deletion {
   background-color: #600;
-  color: #e6e1dc;
+  color: #0088FF;
   display: inline-block;
   width: 100%;
 }
 
 .hljs-selector-class {
-  color: #9b703f;
+  color: #FFDC19;
 }
 
-.hljs-selector-id {
-  color: #8b98ab;
+.hljs-selector-id {   
+  color: #FFDC19;
 }
 
 .hljs-emphasis {
